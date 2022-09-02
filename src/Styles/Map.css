@@ -1,0 +1,16 @@
+.map-container {
+    height: 100vh;
+}
+
+.map-overlay{
+    width: 20%;
+    height: max-content;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.map-menu{
+    width: 20%
+}
