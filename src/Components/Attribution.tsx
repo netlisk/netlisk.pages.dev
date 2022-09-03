@@ -1,12 +1,16 @@
 
-function AttributionComponent(){
+function Attribution(){
     return (
         <div>
+            <h2>About</h2>
+            <p>Icons used: </p>
             <a href="https://www.flaticon.com/free-icons/crown" title="crown icons">Crown icons created by Freepik - Flaticon</a>
             <br/>
             <a href="https://www.flaticon.com/free-icons/mountain" title="mountain icons">Mountain icons created by Bombasticon Studio - Flaticon</a>
+            <br/>
+            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Tempo_doloe - Flaticon</a>
         </div>
     );
 }
 
-export default AttributionComponent;
+export default Attribution;

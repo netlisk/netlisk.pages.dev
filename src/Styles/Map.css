@@ -3,12 +3,39 @@
 }
 
 .map-overlay{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
     width: 20%;
-    height: max-content;
+    height: 50%;
     position: fixed;
-    top: 5px;
-    left: 5px;
+    bottom: 5px;
+    right: 5px;
     background-color: rgba(255,255,255,0.7);
+}
+.map-overlay-layers{
+    display:flex;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: stretch;
+    justify-self: stretch;
+    align-items: flex-start;
+}
+
+.map-overlay-layers h2{
+    align-self: center
+}
+
+.map-overlay-icon{
+    width: 5vh;
+}
+
+.map-overlay-nav{
+    align-self: center;
+    order:99;
+    bottom: 0px;
 }
 
 .map-menu{
