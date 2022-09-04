@@ -5,7 +5,7 @@ import {
     DEFAULT_VIEW,
     ALL_LAYERS,
 } from "../Utils/Constants";
-import {StyledMapOverlay} from "./style";
+import MapOverlayContainer from "./MapOverlayContainer";
 
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoibmV0bGlzayIsImEiOiJjbDdoaHRpZWgwZWg1M3BvM2hjcmdpdDk2In0.iV1TeP1HuYlkql58bKPf5g';
 const bounds: LngLatBoundsLike = [
@@ -51,7 +51,7 @@ function Map(props: any){
         <div>
             <div ref={mapContainer} className={props.className} />
         </div>
-            {(map.current !== null) && <StyledMapOverlay map={map.current} />}
+            {(map.current !== null) && <MapOverlayContainer map={map.current} />}
         </>
     );
 }

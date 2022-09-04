@@ -6,6 +6,8 @@ const MapOverlayText = styled.div`
     flex-direction: column;
     align-self:stretch;
     align-items:flex-start;
+    align-content:top;
+    padding: 10px;
 `;
 
 const MapOverlayHeading = styled.h2`

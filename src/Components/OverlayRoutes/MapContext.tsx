@@ -1,11 +1,11 @@
 import {MapOverlayText, MapOverlayHeading} from "./style";
 
-function MapContext(props: any) {
+function MapContext() {
     return(
         <>
-        <MapOverlayHeading> Aegilean Isle </MapOverlayHeading>
+        <MapOverlayHeading> Agilean Isle </MapOverlayHeading>
             <MapOverlayText>
-                A small, young isle,
+                Lorem Ipsum.
             </MapOverlayText>
         </>
     );
