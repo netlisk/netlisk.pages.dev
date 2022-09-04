@@ -2,6 +2,7 @@ const PHYSICAL: string = "Terrain";
 const POLITICAL: string = "Territories";
 const BURGS: string = "Settlements";
 const ROUTES: string = "Roads";
+const BIOMES: string = "Biomes";
 
 const DEFAULT_VIEW: string = "mapbox://styles/netlisk/cl7j0eocj000414pbh6gcsv2s/draft"
 
@@ -9,6 +10,7 @@ const PHYSICAL_LAYERS: Array<string> = ["heightmap"];
 const POLITICAL_LAYERS: Array<string> = ["political-labels", "political-borders", "political-fills"]
 const ROUTES_LAYERS: Array<string> = ["searoutes", "trails", "roads", "railways"];
 const BURG_LAYERS: Array<string> = ["burgs"]
+const BIOMES_LAYERS: Array<string> = ["biomes"]
 const ALL_LAYERS: Array<string> = [
     "searoutes",
     "trails",
@@ -18,17 +20,20 @@ const ALL_LAYERS: Array<string> = [
     "burgs",
     "political-labels",
     "political-borders",
-    "political-fills"
+    "political-fills",
+    "biomes"
 ]
 export{
     PHYSICAL,
     POLITICAL,
     POLITICAL_LAYERS,
     PHYSICAL_LAYERS,
+    BIOMES_LAYERS,
     DEFAULT_VIEW,
     ROUTES_LAYERS,
     ALL_LAYERS,
     BURG_LAYERS,
     BURGS,
-    ROUTES
+    ROUTES,
+    BIOMES
 }

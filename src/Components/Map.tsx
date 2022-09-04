@@ -5,8 +5,7 @@ import {
     DEFAULT_VIEW,
     ALL_LAYERS,
 } from "../Utils/Constants";
-import "../Styles/Map.css";
-import MapOverlay from "./MapOverlay";
+import {StyledMapOverlay} from "./style";
 
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoibmV0bGlzayIsImEiOiJjbDdoaHRpZWgwZWg1M3BvM2hjcmdpdDk2In0.iV1TeP1HuYlkql58bKPf5g';
 const bounds: LngLatBoundsLike = [
@@ -14,7 +13,8 @@ const bounds: LngLatBoundsLike = [
     [-13.257,26.818]
 ];
 
-function Map(){
+
+function Map(props: any){
     const mapContainer: any = useRef(null);
     const map: any = useRef(null);
     const [lng, setLng] = useState(-25.606593);
@@ -49,9 +49,9 @@ function Map(){
     return (
         <>
         <div>
-            <div ref={mapContainer} className="map-container" />
+            <div ref={mapContainer} className={props.className} />
         </div>
-            {(map.current !== null) && <MapOverlay map={map.current} />}
+            {(map.current !== null) && <StyledMapOverlay map={map.current} />}
         </>
     );
 }

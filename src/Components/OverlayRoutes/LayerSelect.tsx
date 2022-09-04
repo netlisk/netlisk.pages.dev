@@ -1,4 +1,6 @@
 import {
+    BIOMES,
+    BIOMES_LAYERS,
     BURG_LAYERS, BURGS,
     PHYSICAL,
     PHYSICAL_LAYERS,
@@ -6,14 +8,15 @@ import {
     POLITICAL_LAYERS,
     ROUTES,
     ROUTES_LAYERS
-} from "../Utils/Constants";
+} from "../../Utils/Constants";
 
+import {MapOverlayHeading, MapOverlayChecklist} from "./style";
 
 function LayerSelect (props:any){
 
     return (
-        <div className={"map-overlay-layers"}>
-            <h2>Toggle Views</h2>
+        <MapOverlayChecklist>
+            <MapOverlayHeading>Toggle Views</MapOverlayHeading>
             <div>
         <input type={"checkbox"} id={"political"} name={"political"} onChange={(e) =>{
             for (var layername of POLITICAL_LAYERS){
@@ -62,7 +65,18 @@ function LayerSelect (props:any){
     }}/>
     <label htmlFor={"settlements"}>{BURGS}</label>
             </div>
-        </div>
+            <div>
+                <input type={"checkbox"} id={"biomes"} name={"biomes"} onChange={(e) =>{
+                    for (var layername of BIOMES_LAYERS){
+                        props.map.setLayoutProperty(
+                            layername,
+                            "visibility",
+                            e.target.checked ? 'visible' : 'none'
+                        );
+                    }
+                }}/><label htmlFor={"biomes"}>{BIOMES}</label>
+            </div>
+        </MapOverlayChecklist>
     );
 }
 

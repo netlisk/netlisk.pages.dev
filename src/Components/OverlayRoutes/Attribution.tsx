@@ -1,8 +1,9 @@
+import {MapOverlayHeading} from "./style";
 
 function Attribution(){
     return (
         <div>
-            <h2>About</h2>
+            <MapOverlayHeading>About</MapOverlayHeading>
             <p>Icons used: </p>
             <a href="https://www.flaticon.com/free-icons/crown" title="crown icons">Crown icons created by Freepik - Flaticon</a>
             <br/>
