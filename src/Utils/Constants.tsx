@@ -4,7 +4,7 @@ const BURGS: string = "Settlements";
 const ROUTES: string = "Roads";
 const BIOMES: string = "Biomes";
 
-const DEFAULT_VIEW: string = "mapbox://styles/netlisk/cl7j0eocj000414pbh6gcsv2s/draft"
+const DEFAULT_VIEW: string = "mapbox://styles/netlisk/cl7j0eocj000414pbh6gcsv2s"
 
 const PHYSICAL_LAYERS: Array<string> = ["heightmap"];
 const POLITICAL_LAYERS: Array<string> = ["political-labels", "political-borders", "political-fills"]
