@@ -1,10 +1,12 @@
+const MAPBOX_TOKEN = "pk.eyJ1IjoibmV0bGlzayIsImEiOiJjbDd5czN1czIxNGUxM29vYXU5MDc3YjJ6In0.LgII9UTaGq6XqBjs6QjCgA";
+
 const PHYSICAL: string = "Terrain";
 const POLITICAL: string = "Territories";
 const BURGS: string = "Settlements";
 const ROUTES: string = "Roads";
 const BIOMES: string = "Biomes";
 
-const DEFAULT_VIEW: string = "mapbox://styles/netlisk/cl7j0eocj000414pbh6gcsv2s"
+const DEFAULT_VIEW: string = "mapbox://styles/netlisk/cl7j0eocj000414pbh6gcsv2s";
 
 const PHYSICAL_LAYERS: Array<string> = ["heightmap"];
 const POLITICAL_LAYERS: Array<string> = ["political-labels", "political-borders", "political-fills"]
@@ -35,5 +37,6 @@ export{
     BURG_LAYERS,
     BURGS,
     ROUTES,
-    BIOMES
+    BIOMES,
+    MAPBOX_TOKEN
 }

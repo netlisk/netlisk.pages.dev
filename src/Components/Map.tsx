@@ -2,12 +2,11 @@ import {useRef, useEffect, useState} from 'react';
 import * as mapboxgl from 'mapbox-gl';
 import {LngLatBoundsLike} from "mapbox-gl";
 import {
-    DEFAULT_VIEW,
-    ALL_LAYERS,
+    DEFAULT_VIEW, ALL_LAYERS, MAPBOX_TOKEN,
 } from "../Utils/Constants";
 import MapOverlayContainer from "./MapOverlayContainer";
 
-(mapboxgl as any).accessToken = 'pk.eyJ1IjoibmV0bGlzayIsImEiOiJjbDdoaHRpZWgwZWg1M3BvM2hjcmdpdDk2In0.iV1TeP1HuYlkql58bKPf5g';
+(mapboxgl as any).accessToken = MAPBOX_TOKEN;
 const bounds: LngLatBoundsLike = [
     [-35.761,-2.340],
     [-13.257,26.818]
