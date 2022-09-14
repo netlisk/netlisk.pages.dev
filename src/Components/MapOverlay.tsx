@@ -3,9 +3,9 @@ import MapContext from "./OverlayRoutes/MapContext";
 import LayerSelect from "./OverlayRoutes/LayerSelect";
 import Attribution from "./OverlayRoutes/Attribution";
 import {MapOverlayNavbar, MapOverlayNavbarIcon, FloatingToggle} from "./style";
-import IMG_home from "../static/home.png";
-import IMG_layer from "../static/layer.png";
-import IMG_info from "../static/information.png";
+import IMG_home from "../res/home.png";
+import IMG_layer from "../res/layer.png";
+import IMG_info from "../res/information.png";
 
 
 function MapOverlay(props: any){

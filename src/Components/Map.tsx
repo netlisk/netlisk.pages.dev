@@ -5,6 +5,8 @@ import {
     DEFAULT_VIEW, ALL_LAYERS, MAPBOX_TOKEN,
 } from "../Utils/Constants";
 import MapOverlayContainer from "./MapOverlayContainer";
+import {Feature} from "geojson";
+import MapInfobarContainer from "./MapInfobar";
 
 (mapboxgl as any).accessToken = MAPBOX_TOKEN;
 const bounds: LngLatBoundsLike = [
@@ -19,7 +21,9 @@ function Map(props: any){
     const [lng, setLng] = useState(-25.606593);
     const [lat, setLat] = useState(14.382739);
     const [zoom, setZoom] = useState(4);
+    const [marker, setMarker]: any = useState(null);
 
+    // Initialise map
     useEffect(() => {
         if (map.current) return; // initialise one map only.
         map.current = new mapboxgl.Map({
@@ -34,8 +38,9 @@ function Map(props: any){
                 map.current.setLayoutProperty(layer, 'visibility', 'none');
             }
         })
-    });
+    }, []);
 
+    // Store current coords user is looking at.
     useEffect(() => {
         if (!map.current) return;
         map.current.on('move', () => {
@@ -45,12 +50,28 @@ function Map(props: any){
         });
     })
 
+    useEffect(() =>{
+        if (!map.current) return;
+        map.current.on('click', (event: { point: any; }) =>{
+            const markers:Feature[] = map.current.queryRenderedFeatures(event.point, {
+                layers: ['burgs']
+            });
+            if (!markers.length){
+                setMarker(null);
+                return
+            }
+            setMarker(markers[0]);
+            // send information to component?
+        });
+    });
+
     return (
         <>
         <div>
             <div ref={mapContainer} className={props.className} />
         </div>
             {(map.current !== null) && <MapOverlayContainer map={map.current} />}
+            <MapInfobarContainer marker={marker} />
         </>
     );
 }

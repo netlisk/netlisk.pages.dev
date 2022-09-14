@@ -43,5 +43,55 @@ const MapOverlayNavbar = styled.nav`
 const MapOverlayNavbarIcon = styled.img`
     width: 5vh;
 `;
+//
+// const slideIn = keyframes`
+//     from {
+//         transform: translateX(-30vh);
+//     }
+//
+//     to {
+//         transform: translateX(0);
+//     }
+// `;
+//
+// const slideOut = keyframes`
+//     from {
+//         transform: translateX(-30vh);
+//     }
+//
+//     to {
+//         transform: translateX(0);
+//     }
+//
+// `;
+const SlidingInfobar = styled.div`
+    width: 30vh;
+    height: 100vh;
+    bottom: 0px;
+    position: fixed;
+    background-color: rgba(255,255,255,0.7);
+    
+    display: flex;
+    direction: column;
+    justify-content: space-between;
+    
+    transition: left 500ms;
+    
+    &.slide-enter {
+        left: -30vh;
+    }
+    
+    &.slide-enter-active{
+        left: 0;
+    }
+    
+    &.slide-exit {
+        left: 0;
+    }
+    
+    &.slide-exit-active{
+        left: -30vh;
+    }
+`;
 
-export {FloatingToggle, MapOverlayNavbar, MapOverlayNavbarIcon, FloatingDiv};
+export { FloatingToggle, MapOverlayNavbar, MapOverlayNavbarIcon, FloatingDiv, SlidingInfobar};
