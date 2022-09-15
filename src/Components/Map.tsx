@@ -38,7 +38,7 @@ function Map(props: any){
                 map.current.setLayoutProperty(layer, 'visibility', 'none');
             }
         })
-    }, []);
+    });
 
     // Store current coords user is looking at.
     useEffect(() => {

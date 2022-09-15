@@ -1,23 +1,5 @@
 import styled from "styled-components";
 
-// const MapOverlayVisible = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//
-//     width: 20%;
-//     height: 50%;
-//     position: fixed;
-//     bottom: 5px;
-//     right: 5px;
-//     background-color: rgba(255,255,255,0.7);
-//
-//     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-//     line-height: 18px;
-//
-// `;
-
 const FloatingDiv = styled.div`
     width: 30vh;
     position: fixed;
@@ -43,27 +25,7 @@ const MapOverlayNavbar = styled.nav`
 const MapOverlayNavbarIcon = styled.img`
     width: 5vh;
 `;
-//
-// const slideIn = keyframes`
-//     from {
-//         transform: translateX(-30vh);
-//     }
-//
-//     to {
-//         transform: translateX(0);
-//     }
-// `;
-//
-// const slideOut = keyframes`
-//     from {
-//         transform: translateX(-30vh);
-//     }
-//
-//     to {
-//         transform: translateX(0);
-//     }
-//
-// `;
+
 const SlidingInfobar = styled.div`
     width: 30vh;
     height: 100vh;
