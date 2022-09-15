@@ -18,7 +18,7 @@ function MapInfobarContainer(props: any){
     return(
             <CSSTransition in={active} classNames="slide" timeout={500} unmountOnExit={true} nodeRef={nodeRef}>
             <SlidingInfobar ref={nodeRef}>
-          <MapInfobar active={active} title={title} body={body}/>
+                <MapInfobar active={active} title={title} body={body}/>
             </SlidingInfobar>
             </CSSTransition>
     );
