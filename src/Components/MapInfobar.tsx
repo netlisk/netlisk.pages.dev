@@ -1,7 +1,7 @@
 import {SlidingInfobar} from "./style";
 import {CSSTransition} from "react-transition-group";
 import React, {useEffect, useRef, useState} from "react";
-import {firebaseStorage} from "../Utils/firebase";
+import {burgStorage} from "../Utils/firebase";
 import {ref, getBlob} from "firebase/storage";
 import ErrorToast from "../Utils/Error";
 import ReactMarkdown from "react-markdown";
@@ -18,9 +18,9 @@ function MapInfobarContainer(props: any){
     useEffect(()=>{
         if (props.marker !== null){
             let R = new FileReader();
-            let markerRef = ref(firebaseStorage, props.marker.properties.Burg+".md");
-            console.log(R.readyState);
-            console.log(props.marker);
+            let markerRef = ref(burgStorage, props.marker.properties.Burg+".md");
+
+            console.log(markerRef.fullPath);
             if (R.readyState === 0) {
                 getBlob(markerRef) // async download
                     .then((blob) => {

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+import {getStorage, ref} from "firebase/storage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAj9qX0QJAMdVgJJaiRVkzXCZEs3M-jN6g",
@@ -13,5 +13,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
 const firebaseStorage = getStorage(firebase);
+const burgStorage = ref(firebaseStorage, 'burgs');
 export default firebase;
-export {firebaseStorage};
+export {burgStorage};
