@@ -19,8 +19,6 @@ function MapInfobarContainer(props: any){
         if (props.marker !== null){
             let R = new FileReader();
             let markerRef = ref(burgStorage, props.marker.properties.Burg+".md");
-
-            console.log(markerRef.fullPath);
             if (R.readyState === 0) {
                 getBlob(markerRef) // async download
                     .then((blob) => {
