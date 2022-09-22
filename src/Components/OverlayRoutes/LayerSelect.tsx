@@ -13,12 +13,12 @@ import {
 import {MapOverlayHeading, MapOverlayChecklist} from "./style";
 
 function LayerSelect (props:any){
-
     return (
         <MapOverlayChecklist>
             <MapOverlayHeading>Toggle Views</MapOverlayHeading>
             <div>
-        <input type={"checkbox"} id={"political"} name={"political"} onChange={(e) =>{
+        <input type={"checkbox"} id={"political"} name={"political"} checked={props.layerState.political} onChange={(e) =>{
+            props.toggleLayerState({layer:"political"});
             for (var layername of POLITICAL_LAYERS){
                 props.map.setLayoutProperty(
                     layername,
@@ -30,7 +30,8 @@ function LayerSelect (props:any){
             </div>
     <br/>
             <div>
-    <input type={"checkbox"} id={"routes"} name={"routes"} onChange={(e) =>{
+    <input type={"checkbox"} id={"routes"} name={"routes"} checked={props.layerState.routes} onChange={(e) =>{
+        props.toggleLayerState({layer:"routes"});
         for (var layername of ROUTES_LAYERS){
             props.map.setLayoutProperty(
                 layername,
@@ -42,7 +43,8 @@ function LayerSelect (props:any){
             </div>
     <br/>
             <div>
-    <input type={"checkbox"} id={"physical"} name={"physical"} onChange={(e) =>{
+    <input type={"checkbox"} id={"physical"} name={"physical"} checked={props.layerState.physical} onChange={(e) =>{
+        props.toggleLayerState({layer:"physical"});
         for (var layername of PHYSICAL_LAYERS){
             props.map.setLayoutProperty(
                 layername,
@@ -54,7 +56,8 @@ function LayerSelect (props:any){
             </div>
     <br/>
             <div>
-    <input type={"checkbox"} id={"settlements"} name={"settlements"} onChange={(e) =>{
+    <input type={"checkbox"} id={"settlements"} name={"settlements"} checked={props.layerState.settlements} onChange={(e) =>{
+        props.toggleLayerState({layer:"settlements"});
         for (var layername of BURG_LAYERS){
             props.map.setLayoutProperty(
                 layername,
@@ -66,7 +69,8 @@ function LayerSelect (props:any){
     <label htmlFor={"settlements"}>{BURGS}</label>
             </div>
             <div>
-                <input type={"checkbox"} id={"biomes"} name={"biomes"} onChange={(e) =>{
+                <input type={"checkbox"} id={"biomes"} name={"biomes"} checked={props.layerState.biomes} onChange={(e) =>{
+                    props.toggleLayerState({layer:"biomes"});
                     for (var layername of BIOMES_LAYERS){
                         props.map.setLayoutProperty(
                             layername,

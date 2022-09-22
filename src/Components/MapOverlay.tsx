@@ -13,12 +13,12 @@ function MapOverlay(props: any){
         <div className={props.className}>
             <Routes>
                 <Route path={"/"} element={<MapContext />} />
-                <Route path={"views"} element={<LayerSelect map={props.map} />} />
+                <Route path={"views"} element={<LayerSelect map={props.map} layerState={props.layerState} toggleLayerState={props.toggleLayerState} />} />
                 <Route path={"about"} element={<Attribution />} />
             </Routes>
             <MapOverlayNavbar>
                 <Link to={"/"}><MapOverlayNavbarIcon src={IMG_home} alt={"Home"}/> </Link>
-                <Link to={"views"}><MapOverlayNavbarIcon src={IMG_layer} alt={"Toggle Views"}/> </Link>
+                <Link to={"views"}><MapOverlayNavbarIcon src={IMG_layer} alt={"Layers"} /> </Link>
                 <Link to={"about"}><MapOverlayNavbarIcon src={IMG_info} alt={"About"}/></Link>
             </MapOverlayNavbar>
             <FloatingToggle onClick={()=>{
