@@ -27,32 +27,37 @@ const MapOverlayNavbarIcon = styled.img`
 `;
 
 const SlidingInfobar = styled.div`
-    width: 30vh;
-    height: 100vh;
-    bottom: 0px;
+    width: 50%;
+    height: 95%;
+    max-width: 600px;
+    bottom: 2.5%;
+    
     position: fixed;
     background-color: rgba(255,255,255,0.7);
     
+    border-radius: 10px;
+    box-shadow: 0 0 50px -25px black;
+    
     display: flex;
     direction: column;
-    justify-content: space-between;
+    justify-content: center;
     
-    transition: left 500ms;
+    transition: left 0.5s;
     
     &.slide-enter {
-        left: -30vh;
+        left: -50%;
     }
     
     &.slide-enter-active{
-        left: 0;
+        left: 1%;
     }
     
     &.slide-exit {
-        left: 0;
+        left: 1%;
     }
     
     &.slide-exit-active{
-        left: -30vh;
+        left: -50%;
     }
 `;
 

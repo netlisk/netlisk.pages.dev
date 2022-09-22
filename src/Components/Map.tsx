@@ -14,7 +14,6 @@ const bounds: LngLatBoundsLike = [
     [-13.257,26.818]
 ];
 
-
 function Map(props: any){
     const mapContainer: any = useRef(null);
     const map: any = useRef(null);
@@ -58,10 +57,21 @@ function Map(props: any){
             });
             if (!markers.length){
                 setMarker(null);
-                return
+                map.current.easeTo({
+                    padding: {left:0},
+                    duration: 500,
+                    essential: true
+                })
+                return;
             }
             setMarker(markers[0]);
-            // send information to component?
+            map.current.easeTo({
+                // @ts-ignore
+                center: markers[0].geometry["coordinates"],
+                padding: {left:600},
+                duration: 500,
+                essential: true
+            })
         });
     });
 

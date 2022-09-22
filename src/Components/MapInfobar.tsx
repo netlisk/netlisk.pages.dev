@@ -19,6 +19,8 @@ function MapInfobarContainer(props: any){
         if (props.marker !== null){
             let R = new FileReader();
             let markerRef = ref(burgStorage, props.marker.properties.Burg+".md");
+            setBody("Loading..");
+            setActive(true);
             if (R.readyState === 0) {
                 getBlob(markerRef) // async download
                     .then((blob) => {
@@ -31,12 +33,13 @@ function MapInfobarContainer(props: any){
                         }
                     })
                     .catch((error) => {
-                        setError(true);
                         switch (error.code) {
                             case 'storage/object-not-found':
-                                setErrorText("No page in database for this town!");
+                                setBody("No file in database yet.");
+                                setActive(true);
                                 break;
-                            case 'storage/unknown':
+                            default:
+                                setError(true);
                                 setErrorText("Error fetching resource! Check network response.");
                                 break;
                         }

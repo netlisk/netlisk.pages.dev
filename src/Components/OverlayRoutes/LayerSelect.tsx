@@ -15,7 +15,7 @@ import {MapOverlayHeading, MapOverlayChecklist} from "./style";
 function LayerSelect (props:any){
     return (
         <MapOverlayChecklist>
-            <MapOverlayHeading>Toggle Views</MapOverlayHeading>
+            <MapOverlayHeading>Toggle Layers</MapOverlayHeading>
             <div>
         <input type={"checkbox"} id={"political"} name={"political"} checked={props.layerState.political} onChange={(e) =>{
             props.toggleLayerState({layer:"political"});
