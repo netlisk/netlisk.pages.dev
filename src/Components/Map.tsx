@@ -57,11 +57,6 @@ function Map(props: any){
             });
             if (!markers.length){
                 setMarker(null);
-                map.current.easeTo({
-                    padding: {left:0},
-                    duration: 500,
-                    essential: true
-                })
                 return;
             }
             setMarker(markers[0]);
@@ -81,7 +76,7 @@ function Map(props: any){
             <div ref={mapContainer} className={props.className} />
         </div>
             {(map.current !== null) && <MapOverlayContainer map={map.current} />}
-            <MapInfobarContainer marker={marker} />
+            <MapInfobarContainer marker={marker} map={map.current} />
         </>
     );
 }

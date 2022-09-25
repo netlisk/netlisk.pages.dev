@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const FloatingDiv = styled.div`
-    width: 30vh;
+    width: 35%;
+    max-width: 250px;
     position: fixed;
     bottom: 5px;
     right: 5px;
@@ -31,19 +32,55 @@ const SlidingInfobar = styled.div`
     height: 95%;
     max-width: 600px;
     bottom: 2.5%;
+    margin-left: 1%;
+    
+    translate(-100%);
     
     position: fixed;
     background-color: rgba(255,255,255,0.7);
     
-    border-radius: 10px;
-    box-shadow: 0 0 50px -25px black;
+    border-radius: 10px 0 10px 0;
+    box-shadow: -5px 5px 5px -5px gray;
     
-    display: flex;
-    direction: column;
+    
     justify-content: center;
     
-    transition: left 0.5s;
+    transition: transform 0.5s;
     
+    &.slide-enter {
+        transform: translate(-102.5%)
+    }
+    
+    &.slide-enter-active{
+        transform: translate(0)
+    }
+    
+    &.slide-exit {
+        transform: translate(0)
+    }
+    
+    &.slide-exit-active{
+        transform: translate(-102.5%)
+    }
+    
+    &.slide-exit-done{
+        transform: translate(-102.5%)
+    }
+`;
+
+const InfobarTab = styled.div`
+    position: relative;
+    left: 100%;
+    
+    
+    height: 10%;
+    
+    writing-mode: vertical-lr;
+    
+    background-color: rgba(255,255,255,0.7);
+    
+    border-radius: 0 10px 10px 0;
+
     &.slide-enter {
         left: -50%;
     }
@@ -61,4 +98,4 @@ const SlidingInfobar = styled.div`
     }
 `;
 
-export { FloatingToggle, MapOverlayNavbar, MapOverlayNavbarIcon, FloatingDiv, SlidingInfobar};
+export {InfobarTab, FloatingToggle, MapOverlayNavbar, MapOverlayNavbarIcon, FloatingDiv, SlidingInfobar};
