@@ -25,6 +25,7 @@ function MapOverlayContainer(props: { map: any; }){
         if (props.map === null) return; // enforce map load - doesn't work??
     })
 
+    // Overlay container switches rendering of hidden and shown overlay panel
     return(
         <FloatingDiv>
             {overlayHidden

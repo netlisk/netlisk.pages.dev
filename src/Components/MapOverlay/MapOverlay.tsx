@@ -9,6 +9,8 @@ import {MapOverlayNavbar, MapOverlayNavbarIcon, FloatingToggle} from "./style";
 
 
 function MapOverlay(props: any){
+
+    // Routes between the overlay menus.
     return(
         <div className={props.className}>
             <Routes>

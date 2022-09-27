@@ -48,6 +48,7 @@ function MapInfobarContainer(props: any){
     let [errorText, setErrorText] = useState<string>("");
     const nodeRef = useRef(null);
 
+    // Opens the leaf on first load and sets default text.
     useEffect(()=>{
         if (props.map !== null) {
             toggleTab(active, setActive, props.map);
@@ -56,6 +57,7 @@ function MapInfobarContainer(props: any){
         }
     }, [props.map]);
 
+    // Every time the selected marker changes, fetch it from storage.
     useEffect(()=>{
         if (props.marker !== null){
             setActive(true);
@@ -66,11 +68,11 @@ function MapInfobarContainer(props: any){
         }
     }, [props.marker])
 
-    if (active === null) {
-        return(
-            <></>
-            );
-    }
+    // Renders:
+    // - Error toast if needed
+    // - Infobar with transition
+    // - Infobar decorations
+    // All components used are currently stored in this file.
     return(
             <>
                 <ErrorToast body={errorText} error={error} />
@@ -92,9 +94,6 @@ function MapInfobarContainer(props: any){
 }
 
 function MapInfobar(props: { active: boolean; body: string; setBody: Function }){
-    if (!props.active) return null;
-    // Instead of ReactMarkdown, we render the raw mdx from storage - the MDX will need access to props,
-    // setBody and the file path specifically.
     const setBody = props.setBody;
     return(
             <ReactMarkdown children={props.body} components={{

@@ -74,6 +74,7 @@ function LayerSelect (props:any){
                             "visibility",
                             e.target.checked ? 'visible' : 'none'
                         );
+                        console.log(props.map.getLayer(layername));
                     }
                 }}/><label htmlFor={"biomes"}>{BIOMES}</label>
             </div>

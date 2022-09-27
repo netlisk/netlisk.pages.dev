@@ -8,8 +8,8 @@ const FloatingDiv = styled.div`
     width: 35%;
     max-width: 250px;
     position: fixed;
-    bottom: 5px;
-    right: 5px;
+    right: 1.2rem;
+    bottom: 1.2rem;
     
     display: flex;
     flex-direction: column;

@@ -7,9 +7,9 @@ const MapOverlayText = styled.div`
     align-self:stretch;
     align-items:flex-start;
     align-content:top;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
 `;
 
 const MapOverlayHeading = styled.h2`

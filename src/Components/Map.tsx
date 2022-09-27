@@ -47,6 +47,8 @@ function Map(props: any){
         });
     })
 
+
+    // Zoom to and load onto leaf the data of selected settlement.
     useEffect(() =>{
         if (!map.current) return;
         map.current.on('click', (event: { point: any; }) =>{
@@ -68,11 +70,10 @@ function Map(props: any){
         });
     });
 
+    // Load the containers for the infobar and overlay.
     return (
         <>
-        <div>
             <div ref={mapContainer} className={props.className} />
-        </div>
             {(map.current !== null) && <MapOverlayContainer map={map.current} />}
             <MapInfobarContainer marker={marker} map={map.current} />
         </>

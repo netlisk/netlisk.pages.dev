@@ -69,14 +69,17 @@ const WikiContent = styled.div`
     box-shadow: -5px 5px 5px -5px gray;
     position: relative;
     padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: calc(0.75 * 95vh - 3.2rem);
+    overflow: auto;
+    text-align: left;
+    vertical-align: top;
     
     grid-column-start: content;
     grid-column-end: content-end;
     grid-row-start: top;
     grid-row-end: fill;
-
-    text-align: left;
-    vertical-align: top;
+    
 `;
 
 export {WikiContent, InfobarShortcut, InfobarTab, SlidingInfobar};
