@@ -8,7 +8,7 @@ import {
     POLITICAL_LAYERS,
     ROUTES,
     ROUTES_LAYERS
-} from "../../Utils/Constants";
+} from "../../../Utils/Constants";
 
 import {MapOverlayHeading, MapOverlayChecklist} from "./style";
 
@@ -28,7 +28,6 @@ function LayerSelect (props:any){
             }
         }}/><label htmlFor={"political"}>{POLITICAL}</label>
             </div>
-    <br/>
             <div>
     <input type={"checkbox"} id={"routes"} name={"routes"} checked={props.layerState.routes} onChange={(e) =>{
         props.toggleLayerState({layer:"routes"});
@@ -41,7 +40,6 @@ function LayerSelect (props:any){
         }
     }}/><label htmlFor={"routes"}>{ROUTES}</label>
             </div>
-    <br/>
             <div>
     <input type={"checkbox"} id={"physical"} name={"physical"} checked={props.layerState.physical} onChange={(e) =>{
         props.toggleLayerState({layer:"physical"});
@@ -54,7 +52,6 @@ function LayerSelect (props:any){
         }
     }}/><label htmlFor={"physical"}>{PHYSICAL}</label>
             </div>
-    <br/>
             <div>
     <input type={"checkbox"} id={"settlements"} name={"settlements"} checked={props.layerState.settlements} onChange={(e) =>{
         props.toggleLayerState({layer:"settlements"});

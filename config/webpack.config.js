@@ -549,6 +549,17 @@ module.exports = function (webpackEnv) {
                 'sass-loader'
               ),
             },
+            // {
+            //   test:/\.mdx?$/,
+            //   use:[
+            //       // no babel support
+            //     {
+            //       loader: '@mdx-js/loader',
+            //       /** @type {import('@mdx-js/loader').Options} */
+            //       options: {/* jsxImportSource: …, otherOptions… */}
+            //     }
+            //   ]
+            // },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.

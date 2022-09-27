@@ -1,10 +1,8 @@
 import {useRef, useEffect, useState} from 'react';
 import * as mapboxgl from 'mapbox-gl';
 import {LngLatBoundsLike} from "mapbox-gl";
-import {
-    DEFAULT_VIEW, ALL_LAYERS, MAPBOX_TOKEN,
-} from "../Utils/Constants";
-import MapOverlayContainer from "./MapOverlayContainer";
+import {DEFAULT_VIEW, ALL_LAYERS, MAPBOX_TOKEN} from "../Utils/Constants";
+import MapOverlayContainer from "./MapOverlay/MapOverlayContainer";
 import {Feature} from "geojson";
 import MapInfobarContainer from "./MapInfobar";
 

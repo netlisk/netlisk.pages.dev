@@ -11,7 +11,7 @@ const initialState = {
     biomes: false
 }
 
-function MapOverlayContainer(props: any){
+function MapOverlayContainer(props: { map: any; }){
     const [overlayHidden, setOverlayHidden] = useState(false);
     let [layerState, toggleLayerState] = useReducer(
         (state: any, action: any) => {

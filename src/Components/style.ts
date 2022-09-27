@@ -1,54 +1,22 @@
 import styled from "styled-components";
 
-const FloatingDiv = styled.div`
-    width: 35%;
-    max-width: 250px;
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: rgba(255,255,255,0.7);
-`;
-
-const FloatingToggle = styled.div`
-    cursor: pointer;
-`;
-
-const MapOverlayNavbar = styled.nav`
-    align-self: center;
-    order:99;
-    bottom: 0;
-`;
-
-const MapOverlayNavbarIcon = styled.img`
-    width: 5vh;
-`;
-
 const SlidingInfobar = styled.div`
-    width: 50%;
-    height: 95%;
-    max-width: 600px;
-    bottom: 2.5%;
-    margin-left: 1%;
+    width: calc(0.75 * 95vh);
+    height: 95vh;
+    bottom: 2.5vh;
+    margin-left: 1.2rem;
     
-    translate(-100%);
-    
+    display: grid;
+    grid-template-columns: [content] 1fr [content-end] 1.2rem [tab-end];
+    grid-template-rows: [top] 0.1fr [tab1] 8em [tab2] auto [fill];
+     
     position: fixed;
-    background-color: rgba(255,255,255,0.7);
-    
-    border-radius: 10px 0 10px 0;
-    box-shadow: -5px 5px 5px -5px gray;
-    
-    
     justify-content: center;
     
     transition: transform 0.5s;
     
     &.slide-enter {
-        transform: translate(-102.5%)
+        transform: translate(calc(-0.75 * 95vh))
     }
     
     &.slide-enter-active{
@@ -60,42 +28,55 @@ const SlidingInfobar = styled.div`
     }
     
     &.slide-exit-active{
-        transform: translate(-102.5%)
+        transform: translate(calc(-0.75 * 95vh))
     }
     
     &.slide-exit-done{
-        transform: translate(-102.5%)
+        transform: translate(calc(-0.75 * 95vh))
     }
 `;
 
 const InfobarTab = styled.div`
-    position: relative;
-    left: 100%;
-    
-    
-    height: 10%;
-    
     writing-mode: vertical-lr;
-    
     background-color: rgba(255,255,255,0.7);
-    
     border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    vertical-align: top;
 
-    &.slide-enter {
-        left: -50%;
-    }
-    
-    &.slide-enter-active{
-        left: 1%;
-    }
-    
-    &.slide-exit {
-        left: 1%;
-    }
-    
-    &.slide-exit-active{
-        left: -50%;
-    }
+    grid-column-start: content-end;
+    grid-column-end: tab-end;
+    grid-row-start: top;
+    grid-row-end: tab1;
 `;
 
-export {InfobarTab, FloatingToggle, MapOverlayNavbar, MapOverlayNavbarIcon, FloatingDiv, SlidingInfobar};
+const InfobarShortcut = styled.div`
+    border-radius: 0 10px 10px 0;
+    
+    writing-mode: vertical-lr;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    
+    grid-column-start: content-end;
+    grid-column-end: tab-end;
+    grid-row-start: tab1;
+    grid-row-end: tab2;
+
+`;
+
+const WikiContent = styled.div`
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px 0 10px 0;
+    box-shadow: -5px 5px 5px -5px gray;
+    position: relative;
+    padding-left: 1rem;
+    
+    grid-column-start: content;
+    grid-column-end: content-end;
+    grid-row-start: top;
+    grid-row-end: fill;
+
+    text-align: left;
+    vertical-align: top;
+`;
+
+export {WikiContent, InfobarShortcut, InfobarTab, SlidingInfobar};

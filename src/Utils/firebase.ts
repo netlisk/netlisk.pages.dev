@@ -14,5 +14,6 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const firebaseStorage = getStorage(firebase);
 const burgStorage = ref(firebaseStorage, 'burgs');
+const wikiStorage = ref(firebaseStorage, 'wiki-root');
 export default firebase;
-export {burgStorage};
+export {burgStorage, wikiStorage};

@@ -7,7 +7,9 @@ const MapOverlayText = styled.div`
     align-self:stretch;
     align-items:flex-start;
     align-content:top;
-    padding: 10px;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
 `;
 
 const MapOverlayHeading = styled.h2`
@@ -18,9 +20,11 @@ const MapOverlayChecklist = styled.div`
     display:flex;
     flex-direction: column;
     align-self: stretch;
-    justify-content: stretch;
-    justify-self: stretch;
+    justify-content: space-between;
+    justify-self: stretch; 
     align-items: flex-start;
+    padding-left: 2rem;
+    padding-right: 2rem;
 `;
 
 export {MapOverlayText, MapOverlayHeading, MapOverlayChecklist}
