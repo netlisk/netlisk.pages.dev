@@ -1,4 +1,4 @@
-const MAPBOX_TOKEN = "pk.eyJ1IjoibmV0bGlzayIsImEiOiJjbDd5czN1czIxNGUxM29vYXU5MDc3YjJ6In0.LgII9UTaGq6XqBjs6QjCgA";
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const PHYSICAL: string = "Terrain";
 const POLITICAL: string = "Territories";
