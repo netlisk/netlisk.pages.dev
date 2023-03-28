@@ -9,7 +9,7 @@ const Link = styled.a`
 
 function WikiLinkTo(props:{setBody: Function, href: string, children: string[]}){
     const setBody: Function = props.setBody;
-    const path: string = props.href;
+    var path: string = props.href;
     const text: string = props.children[0];
     // Requires setBody, a link to the file relative to wiki-root
     // Pulls content from Firebase Storage and renders it by setting the body to the appropriate file.
@@ -20,7 +20,7 @@ function WikiLinkTo(props:{setBody: Function, href: string, children: string[]})
             </Link>
         );
     else {
-        if (path.includes("wiki-root/")) path.replace("wiki-root/", "")
+        if (path.includes("wiki-root/")) path = path.replace("wiki-root/", "")
         return (
             <Link onClick={() => {
                 loadFromStore(setBody, wikiStorage, path);
