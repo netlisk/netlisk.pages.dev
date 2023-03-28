@@ -19,14 +19,16 @@ function WikiLinkTo(props:{setBody: Function, href: string, children: string[]})
             {text+"↗"}
             </Link>
         );
-
-    else return (
-        <Link onClick={()=>{
-            loadFromStore(setBody, wikiStorage, path);
-        }}>
-            {text}
-        </Link>
-    )
+    else {
+        if (path.includes("wiki-root/")) path.replace("wiki-root/", "")
+        return (
+            <Link onClick={() => {
+                loadFromStore(setBody, wikiStorage, path);
+            }}>
+                {text}
+            </Link>
+        )
+    }
 }
 
 export default WikiLinkTo;
