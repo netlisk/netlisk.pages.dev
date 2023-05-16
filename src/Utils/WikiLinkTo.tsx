@@ -21,6 +21,7 @@ function WikiLinkTo(props:{setBody: Function, href: string, children: string[]})
         );
     else {
         if (path.includes("wiki-root/")) path = path.replace("wiki-root/", "")
+        path = decodeURI(path)
         return (
             <Link onClick={() => {
                 loadFromStore(setBody, wikiStorage, path);
